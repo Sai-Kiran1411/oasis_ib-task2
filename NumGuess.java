@@ -1,12 +1,12 @@
 import java.util.*;
-public class NumberGuessingGame {
-    static ArrayList<Integer> scoreBoard = new ArrayList<Integer>();
+public class Number{
+    static ArrayList<Integer> sb = new ArrayList<Integer>();
     public static void main(String[] args) {
-        NumberGuessingGame methodChange = new NumberGuessingGame();
-        methodChange.menu(scoreBoard);
+        Number methodChange = new Number();
+        methodChange.menu(sb);
     }
-    public void menu(ArrayList<Integer> scoreBoard) {
-        NumberGuessingGame methodChange = new NumberGuessingGame();
+    public void menu(ArrayList<Integer> sb) {
+        Number methodChange = new Number();
         Scanner input = new Scanner(System.in);
         System.out.println("--------------------");
         System.out.println("Welcome to the number game");
@@ -64,21 +64,21 @@ public class NumberGuessingGame {
         } else {
             System.out.println("You answered number is right in " + guess + " tries!");
         }
-        scoreBoard.add(guess);
+        sb.add(guess);
         System.out.println(" ");
 
-        menu(scoreBoard);
+        menu(sb);
     }
     public void displayScoreBoard() {
         System.out.println("--------------------");
         System.out.println("Score Board");
         System.out.println("--------------------");
         System.out.println("Your fastest games today out of all tries is: " +"\n");
-        Collections.sort(scoreBoard);
-        for (Integer scores : scoreBoard) {
+        Collections.sort(sb);
+        for (Integer scores : sb) {
             System.out.println("Finished the number game in " + scores + " tries");
         }
         System.out.println(" ");
-        menu(scoreBoard);
+        menu(sb);
     }
 }
