@@ -9,17 +9,17 @@ public class Number{
         Number methodChange = new Number();
         Scanner input = new Scanner(System.in);
         System.out.println("--------------------");
-        System.out.println("Welcome to the number game");
+        System.out.println("Welcome to the number game\n");
         System.out.println("1) Play the Game");
         System.out.println("2) Score Board");
         System.out.println("3) Exit the game");
         System.out.println("--------------------");
         try {
-            System.out.print("What action would you like to do from the above actions? ");
+            System.out.print("\nEnter Your Choice: ");
             int menuOption = input.nextInt();
             switch (menuOption) {
                 case 1:
-                    System.out.print("\n"+"What would you like the range of the numbers to be? ");
+                    System.out.print("\n"+"Input the range of the numbers: ");
                     int numberRange = input.nextInt();
                     int randomNumber = methodChange.randomNumber(numberRange);
                     methodChange.guessNumber(randomNumber);
@@ -36,7 +36,7 @@ public class Number{
             }
         }catch(InputMismatchException e){
             System.err.println("\n"+e.getMessage() +"\n");
-            menu(scoreBoard);
+            menu(sb);
         }
     }
     public int randomNumber(int numberRange) {
